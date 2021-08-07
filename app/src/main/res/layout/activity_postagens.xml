@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/colorIce"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/colorBlack"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_postagens_recentes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/layout_header"
+            app:layout_constraintBottom_toBottomOf="@id/layout_header"
+            app:layout_constraintEnd_toEndOf="@id/layout_header"
+            app:layout_constraintStart_toStartOf="@id/layout_header"
+            android:textColor="@color/colorIce"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_postagens"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_header"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/framelayout_comentarios"
+            android:layout_width="match_parent"
+            android:layout_marginTop="85dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:id="@+id/framelayout_header"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@color/colorBlack"
+                    android:orientation="vertical">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_o_que_a_galera_comentou_sobre"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorIce"/>
+
+                <TextView
+                        android:id="@+id/txt_titulopostagem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_titulo_postagem"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/colorIce"/>
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_comentarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/framelayout_header"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

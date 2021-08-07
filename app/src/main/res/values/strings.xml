@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DesafioRoga</string>
+    <string name="label_logo_roga_labs">logo_roga_labs</string>
+    <string name="label_desafio_roga_labs">Desafio Roga Labs</string>
+    <string name="label_meunome">Marco Antônio de Almeida Martiniano</string>
+    <string name="label_especialidade">Especialista Kotlin Júnior</string>
+    <string name="label_desafio">Desafio</string>
+    <string name="label_desafiodescricao">Conhecimento em consumo de APIs</string>
+    <string name="label_postagens_recentes">Postagens Recentes</string>
+    <string name="label_titulo_postagem">Titulo Postagem</string>
+    <string name="label_o_que_a_galera_comentou_sobre">O que a galera comentou sobre</string>
+</resources>
