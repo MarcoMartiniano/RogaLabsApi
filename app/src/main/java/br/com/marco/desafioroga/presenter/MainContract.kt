@@ -8,7 +8,7 @@ interface MainContract {
         fun UIAutoUpdate(data: PostsModel)
         fun UIUpdateComments(data: CommentsModel, id:String)
         fun setPoststitle(postTitle: String)
-        fun networkCall()
+        fun networkCallPosts()
         fun networkCallComments(id: String)
     }
 
@@ -18,6 +18,8 @@ interface MainContract {
        fun updateViewCommentsTitle(postTitle: String)
        fun disableComments()
        fun enableComments()
+       fun setListenners()
+       fun setAlpha(alpha: Float)
     }
 
     interface PostsModels{

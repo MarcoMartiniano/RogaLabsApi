@@ -24,9 +24,9 @@ class PostsActivity : AppCompatActivity() , MainContract.View{
         setContentView(R.layout.activity_postagens)
 
         setPresenter(MainPresenter(this))
-
+        setListenners()
         disableComments()
-        presenter.networkCall()
+        presenter.networkCallPosts()
 
     }
 
@@ -36,7 +36,7 @@ class PostsActivity : AppCompatActivity() , MainContract.View{
     }
 
     override fun updateViewComments(data: CommentsModel, id: String) {
-        presenter.networkCallComments(id)
+        //presenter.networkCallComments(id)
         displayComments(data)
     }
 
@@ -61,10 +61,22 @@ class PostsActivity : AppCompatActivity() , MainContract.View{
 
     override fun disableComments() {
         framelayout_comentarios.visibility = View.GONE
+        setAlpha(1.0f)
     }
 
     override fun enableComments() {
         framelayout_comentarios.visibility = View.VISIBLE
+        setAlpha(0.5f)
+    }
+
+    override fun setListenners() {
+        floating_action_button.setOnClickListener { disableComments()
+        }
+    }
+
+    override fun setAlpha(alpha: Float) {
+        rv_postagens.alpha = alpha
+        layout_header.alpha = alpha
     }
 
     override fun setPresenter(presenter: MainContract.Presenter) {

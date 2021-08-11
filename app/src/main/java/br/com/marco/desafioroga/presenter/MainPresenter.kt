@@ -23,15 +23,13 @@ class MainPresenter (view: MainContract.View): MainContract.Presenter{
         view?.updateViewCommentsTitle(postTitle)
     }
 
-    override fun networkCall() {
+    override fun networkCallPosts() {
         models?.getAllPosts(this)
     }
 
     override fun networkCallComments(id:String) {
         models?.getAllCommentsById(this,id)
     }
-
-
 
     override fun onDestroy() {
         this.view = null

@@ -21,6 +21,7 @@ class PostsRepository : MainContract.PostsModels{
 
     override fun getAllPosts(presenter: MainContract.Presenter) {
         val call = apiClient?.getPosts()
+
         call?.enqueue(object : Callback<PostsModel>{
             override fun onResponse(call: Call<PostsModel>, response: Response<PostsModel>) {
                 if(response.isSuccessful){
@@ -57,8 +58,5 @@ class PostsRepository : MainContract.PostsModels{
 
 
     }
-
-
-
 
 }

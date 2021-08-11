@@ -19,15 +19,16 @@ class RecyclePostAdapter (
     var idItem: String = "1"
     var postTitle: String = "1"
 
+
     inner class PostViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         init {
             itemView.setOnClickListener {
-                viewPresenter.enableComments()
                 val position : Int = bindingAdapterPosition
                 idItem = posts[position].id.toString()
                 postTitle = posts[position].title
                 presenter.networkCallComments(idItem)
                 presenter.setPoststitle(postTitle)
+                viewPresenter.enableComments()
             }
         }
     }
@@ -43,6 +44,7 @@ class RecyclePostAdapter (
         holder.itemView.apply {
             txt_postagens_title.text = posts[position].title
             txt_postagens_body.text = posts[position].body
+            //holder.itemView.setTag(position)
         }
     }
 
